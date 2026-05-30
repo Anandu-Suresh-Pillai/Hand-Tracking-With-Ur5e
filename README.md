@@ -61,10 +61,9 @@ Since a normal webcam has no depth sensor, depth is estimated by **how big your 
 
 ## Project Structure
 
-```
-gesture_ws/
 ├── assets/
-│   └── output.gif              ← demo recording
+│   └── output.gif              ← demo recording```
+gesture_ws/
 ├── src/gesture_control/
 │   ├── gesture_control/
 │   │   ├── kinematics.py       ← forward & inverse kinematics engine
@@ -76,6 +75,7 @@ gesture_ws/
 │   └── urdf/
 │       └── ur5e.urdf           ← robot description file
 └── meshes/                     ← 3D model files for the robot
+├── README
 ```
 
 ---
