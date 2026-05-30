@@ -1,4 +1,4 @@
-# 🤖 UR5e Hand Gesture Control — ROS 2 Simulation
+# UR5e Hand Gesture Control — ROS 2 Simulation
 
 > Control a robot arm in real-time using just your hand and a webcam. No special hardware needed.
 
@@ -181,8 +181,6 @@ ALPHA = 0.45 # smoothing (lower = snappier, higher = smoother)
 ```
 
 ---
-
-## Acknowledgements
 
 - Robot model: [Universal Robots UR5e](https://www.universal-robots.com/)
 - Hand tracking: [MediaPipe](https://mediapipe.dev/) by Google
