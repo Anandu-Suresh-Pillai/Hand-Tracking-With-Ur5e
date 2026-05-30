@@ -8,7 +8,7 @@
 
 ## What is this?
 
-This is a university project that lets you **control a virtual UR5e robot arm** by moving your hand in front of your laptop webcam. The robot mimics your hand movements in 3D, rendered live inside RViz2 (a ROS 2 visualisation tool).
+This is a project that lets you **control a virtual UR5e robot arm** by moving your hand in front of your laptop webcam. The robot mimics your hand movements in 3D, rendered live inside RViz2 (a ROS 2 visualisation tool).
 
 The idea came from wanting to explore human-robot interaction without needing an actual physical robot — everything runs as a software simulation on a normal PC.
 
@@ -21,7 +21,7 @@ The idea came from wanting to explore human-robot interaction without needing an
 3. Those coordinates get converted into joint angles for the robot using a math technique called **Inverse Kinematics**.
 4. The robot arm in RViz2 updates 20 times per second to match your hand position.
 
-### The "Clutch" (the most important concept)
+### The "Clutch" 
 
 Think of it like lifting a mouse off a mousepad:
 
@@ -58,22 +58,25 @@ Since a normal webcam has no depth sensor, depth is estimated by **how big your 
 | Language | Python 3.10 |
 
 ---
+
 ## Project Structure
 
-```text
+```
 gesture_ws/
-├── src/
-│   └── gesture_control/
-│       ├── gesture_control/
-│       │   ├── kinematics.py
-│       │   └── gesture_control_node.py
-│       ├── launch/
-│       │   └── gesture_control.launch.py
-│       ├── rviz/
-│       │   └── ur5e.rviz
-│       ├── urdf/
-│       │   └── ur5e.urdf
-│       └── meshes/
+├── src/gesture_control/
+│   ├── gesture_control/
+│   │   ├── kinematics.py       ← forward & inverse kinematics engine
+│   │   └── gesture_control_node.py  ← main ROS 2 node (hand tracking + control)
+│   ├── launch/
+│   │   └── gesture_control.launch.py
+│   ├── rviz/
+│   │   └── ur5e.rviz           ← pre-configured RViz2 layout
+│   └── urdf/
+│       └── ur5e.urdf           ← robot description file
+└── meshes/                     ← 3D model files for the robot
+```
+
+---
 
 ## Setup & Installation
 
@@ -142,14 +145,14 @@ This opens:
 
 ---
 
-## The Math (brief, I promise)
+## The Math 
 
 ### Forward Kinematics
 To know *where* the robot's hand currently is, the code chains together 6 rotation matrices — one for each joint — based on the exact physical dimensions from the URDF file.
 
-### Inverse Kinematics (the hard part)
+### Inverse Kinematics 
 Going the other way — "given a target position, what angles should the joints be?" — is much harder. This uses a method called **Damped Least Squares**, which:
-1. Calculates how moving each joint a tiny bit would move the robot's hand (the "Jacobian").
+1. Calculates how moving each joint a tiny bit would move the robot's hand.
 2. Iteratively adjusts all 6 joints together to reduce the distance to the target.
 3. The "damping" prevents the robot from making sudden jerky movements near tricky positions.
 
@@ -174,11 +177,5 @@ K_Y = 2.00   # left/right sensitivity
 K_Z = 2.00   # up/down sensitivity
 ALPHA = 0.45 # smoothing (lower = snappier, higher = smoother)
 ```
-
----
-
-- Robot model: [Universal Robots UR5e](https://www.universal-robots.com/)
-- Hand tracking: [MediaPipe](https://mediapipe.dev/) by Google
-- Built as part of a robotics simulation project using ROS 2 Humble
 
 ---
