@@ -58,23 +58,22 @@ Since a normal webcam has no depth sensor, depth is estimated by **how big your 
 | Language | Python 3.10 |
 
 ---
-
 ## Project Structure
 
-
+```text
 gesture_ws/
-├── src/gesture_control/
-│   ├── gesture_control/
-│   │   ├── kinematics.py       ← forward & inverse kinematics engine
-│   │   └── gesture_control_node.py  ← main ROS 2 node (hand tracking + control)
-│   ├── launch/
-│   │   └── gesture_control.launch.py
-│   ├── rviz/
-│   │   └── ur5e.rviz           ← pre-configured RViz2 layout
-│   └── urdf/
-│       └── ur5e.urdf           ← robot description file
-└── meshes/                     ← 3D model files for the robot
----
+├── src/
+│   └── gesture_control/
+│       ├── gesture_control/
+│       │   ├── kinematics.py
+│       │   └── gesture_control_node.py
+│       ├── launch/
+│       │   └── gesture_control.launch.py
+│       ├── rviz/
+│       │   └── ur5e.rviz
+│       ├── urdf/
+│       │   └── ur5e.urdf
+│       └── meshes/
 
 ## Setup & Installation
 
