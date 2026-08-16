@@ -1,8 +1,6 @@
 # UR5e Hand Gesture Control — ROS 2 Simulation
 
-> Control a robot arm in real-time using just your hand and a webcam. No special hardware needed.
-
-![Demo](assets/output.gif)
+> Control a robot arm in real-time using just your hand and a webcam. No special hardware needed
 
 ---
 
