@@ -6,6 +6,7 @@ Control a virtual UR5e robot arm using hand movements captured through a laptop 
 <p align = "center">
   <img source = "assets/demo.gif" alt = "UR5e Hand Teleoperation">
 </p>
+
 ## Implementation
 
 The system uses MediaPipe Hands and OpenCV to track hand landmarks from the webcam. Hand position is mapped to the robot workspace, with hand size used to estimate depth. A clutch mechanism uses an open hand to freeze the robot and a closed fist to engage control. Custom forward kinematics calculates the robot pose, while Damped Least Squares inverse kinematics converts the target position into joint angles. The system runs at 20 Hz using ROS 2 Humble and RViz2.
