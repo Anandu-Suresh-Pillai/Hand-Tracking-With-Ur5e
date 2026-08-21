@@ -2,7 +2,7 @@
 
 > Control a robot arm in real-time using just your hand and a webcam. No special hardware needed
 
----
+![Project Demo](assets/demo.gif)
 
 ## What is this?
 
