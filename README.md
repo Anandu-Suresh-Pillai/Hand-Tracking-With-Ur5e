@@ -4,7 +4,7 @@ Control a virtual UR5e robot arm using hand movements captured through a laptop 
 
 ## Demo
 
-![Robot arm following hand movements](assets/output.gif)
+![Robot arm following hand movements](assets/demo.gif)
 
 ## Implementation
 
