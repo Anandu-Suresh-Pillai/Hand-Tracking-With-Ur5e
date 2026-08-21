@@ -4,7 +4,7 @@ Control a virtual UR5e robot arm using hand movements captured through a laptop 
 
 ## Demo
 <p align = "center">
-  <img source = "assets/demo.gif" alt = "UR5e Hand Teleoperation">
+  <img src = "assets/demo.gif" alt = "UR5e Hand Teleoperation">
 </p>
 
 ## Implementation
